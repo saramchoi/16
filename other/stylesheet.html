@@ -1,0 +1,68 @@
+<style type="text/css">
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&family=Gothic+A1:wght@300&display=swap');
+
+
+	div {font-family: 'Gothic A1', sans-serif;}
+
+	.wrap {width:1600px; margin: 0 auto; }
+	.wrapper{width: 100%; margin: 0 auto; background: black;}
+	html{margin: 0;}
+
+	.element {opacity: 0; animation: fade-in 2s forwards; animation-delay: 0.5s;}
+	@keyframes fade-in {from {opacity: 0;}
+  	to {opacity: 1;}
+	}
+
+	.slide-in {animation: slide-in 1s ease-in-out forwards; opacity: 0;}
+	@keyframes slide-in {
+     from {transform: translateX(-100%);}
+     to {transform: translateX(0); opacity: 1;}
+     }
+			
+	
+
+	body {margin:0;}
+	nav {color: white; font-size: 24px; font-family: 'Blinker', sans-serif;
+		font-weight: 700;}
+	span {margin-right: 24px; padding: 0; text-align: right;}
+	a {text-decoration-line: none; color: white; text-align: right;}
+	.header-content {display: flex; align-items: center; justify-content: space-between; }
+	.logo {margin-right: 24px;}
+
+	section {margin-top: 200px;}
+
+
+	h1 {font-size: 82px; margin: 0; font-family: 'Blinker', sans-serif; font-weight: 700;}
+	h2 {font-size: 32px; margin: 0;}
+	h3 {font-size: 24px; margin: 0px; margin-top: 40px;}
+  	p  {font-size: 20px; margin-top: 4px; font-family: 'Blinker', sans-serif;}
+
+	button {background-color: red; color: white; font-size: 24px; border: 0; border-radius: 30px; padding: 12px 30px; margin-top: 30px; font-family: 'Blinker', sans-serif;}
+	#button1:hover{color: red; background-color: white;}
+	#button2:hover{color: red; background-color: black;}
+
+   .section {
+    background-image: url("ten.png");
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {padding: 10px 0 10PX 0; background: black; display: flex;
+  justify-content: space-between; align-items: center;
+  position: fixed; top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 9999;
+  }
+
+
+</style>
