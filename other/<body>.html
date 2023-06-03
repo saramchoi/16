@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <style>
+    .wrap {width:1600px; margin: 0 auto; }
+    html {margin: 0;}
+
+   .container {
+      width: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      border: none;
+      transition: opacity 0.3s ease-in-out;
+      font-size: 36px;
+      background: black;
+      color: red;
+      margin-top: 0px;
+    }
+
+    .prev {
+      left: 0px;
+      background-repeat: no-repeat;
+      padding: 20px 30px 20px 200px ;
+    }
+
+    .next {
+      right: 0px;
+      background-repeat: no-repeat;
+      padding: 20px 200px 20px  30px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      opacity: 1;
+    }
+
+
+  </style>
+</head>
+<body>
+
+
+
+<div class="wrap">
+<div class="parent" style="display: flex; justify-content: space-between;">
+
+  <div class="child">
+      <section class="container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="2.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="3.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+              <img src="4.jpg" alt="Image 4">
+            </div>
+          </div>
+        </div>
+      <div>
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="child">
+      <section class="container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="h.1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="h.2.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="h.3.jpg" alt="Image 3">
+            </div>
+          </div>
+        </div>
+      <div>
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="child">
+      <section class="container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="doll.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="bug.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="key.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+              <img src="ma.jpg" alt="Image 4">
+            </div>
+          </div>
+        </div>
+      <div>
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+    </section>
+  </div>
+
+
+</div>
+</div>
+
+
+  <script>
+  const children = document.querySelectorAll('.child');
+
+  children.forEach(child => {
+    const slider = child.querySelector('.slider');
+    const slides = child.querySelector('.slides');
+    const prevButton = child.querySelector('.prev');
+    const nextButton = child.querySelector('.next');
+    let slideWidth = slider.clientWidth;
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.style.transform = `translateX(-${slideWidth * index}px)`;
+      currentSlide = index;
+    }
+
+    function slideNext() {
+      if (currentSlide === slides.children.length - 1) {
+        showSlide(0);
+      } else {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function slidePrev() {
+      if (currentSlide === 0) {
+        showSlide(slides.children.length - 1);
+      } else {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    prevButton.addEventListener('click', slidePrev);
+    nextButton.addEventListener('click', slideNext);
+  });
+</script>
+
+</body>
+</html>
